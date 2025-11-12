@@ -86,14 +86,6 @@
       font-size: 15px;
       font-weight: bold;
     }
-
-    /* 🎥 Estilo para el video */
-    #musica {
-      display: none;
-      margin-top: 15px;
-      border-radius: 15px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.4);
-    }
   </style>
 </head>
 <body>
@@ -110,17 +102,16 @@
     </div>
 
     <button id="mensajeBtn">Toca aquii mi amorsitooo 💖</button>
-    <p id="mensaje">Te amo mucho mi mamoiii, te lo hice con mucho cariño mi amorsita hermosa 💞</p>
+    <p id="mensaje">Te amo mucho mi mamoiii,te lo hice con mucho cariño mi amorsita hermosa 💞</p>
 
-    <!-- 🎥 Video que se mostrará después de hacer clic -->
+    <!-- 🎵 Video de YouTube oculto -->
     <iframe
       id="musica"
-      width="240"
-      height="135"
+      width="0"
+      height="0"
       src=""
       frameborder="0"
       allow="autoplay; encrypted-media"
-      allowfullscreen
     ></iframe>
   </div>
 
@@ -129,12 +120,11 @@
     const btn = document.getElementById('mensajeBtn');
     const musica = document.getElementById('musica');
 
-    // 🔹 Muestra el mensaje y el video
+    // 🔹 Muestra el mensaje y activa la música
     btn.addEventListener('click', function() {
       mensaje.style.display = 'block';
-      musica.style.display = 'block';
       musica.src = "https://www.youtube.com/embed/xPaSuWrBAQI?autoplay=1&loop=1&playlist=xPaSuWrBAQI";
-      btn.style.display = 'none'; // Oculta el botón
+      btn.style.display = 'none'; // oculta el botón después de tocar
     });
 
     // 🔹 Carrusel automático
