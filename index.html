@@ -133,7 +133,23 @@
     btn.addEventListener('click', function() {
       mensaje.style.display = 'block';
       musica.style.display = 'block';
-      musica.src = "https://www.youtube.com/embed/xPaSuWrBAQI?autoplay=1&loop=1&playlist=
+      musica.src = "https://www.youtube.com/embed/xPaSuWrBAQI?autoplay=1&loop=1&playlist=xPaSuWrBAQI";
+      btn.style.display = 'none'; // Oculta el botón
+    });
 
-
-
+    // 🔹 Carrusel automático
+    let slideIndex = 0;
+    showSlides();
+    function showSlides() {
+      const slides = document.getElementsByClassName("slide");
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) { slideIndex = 1 }
+      slides[slideIndex - 1].style.display = "block";
+      setTimeout(showSlides, 3000);
+    }
+  </script>
+</body>
+</html>
