@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Para ti 💙</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #007bff, #66ccff);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: white;
+      overflow: hidden;
+    }
+
+    .container {
+      text-align: center;
+      background: rgba(255, 255, 255, 0.15);
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 4px 25px rgba(0,0,0,0.3);
+      width: 320px;
+      backdrop-filter: blur(10px);
+    }
+
+    h1 {
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    .slideshow-container {
+      max-width: 300px;
+      position: relative;
+      margin: auto;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    }
+
+    .slide {
+      display: none;
+    }
+
+    .slide img {
+      width: 100%;
+      border-radius: 15px;
+    }
+
+    .fade {
+      animation-name: fade;
+      animation-duration: 1.2s;
+    }
+
+    @keyframes fade {
+      from {opacity: 0.4}
+      to {opacity: 1}
+    }
+
+    button {
+      background-color: #0044cc;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 10px;
+      cursor: pointer;
+      margin-top: 15px;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background-color: #0033aa;
+    }
+
+    #mensaje {
+      display: none;
+      margin-top: 15px;
+      color: #fff;
+      font-size: 15px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Hola mi amor 💕</h1>
+    <p>Gracias mi amorsito por hacerme muy feliz y ya queda poco para el 14 mi MAMOIIIII 💙</p>
+
+    <div class="slideshow-container">
+      <div class="slide fade"><img src="Imagen1.jpg" alt="Foto 1" /></div>
+      <div class="slide fade"><img src="Imagen2.jpg" alt="Foto 2" /></div>
+      <div class="slide fade"><img src="Imagen3.jpg" alt="Foto 3" /></div>
+      <div class="slide fade"><img src="Imagen4.jpg" alt="Foto 4" /></div>
+      <div class="slide fade"><img src="Imagen5.jpg" alt="Foto 5" /></div>
+    </div>
+
+    <button id="mensajeBtn">Toca aquii mi amorsitooo 💖</button>
+    <p id="mensaje">Te amo mucho mi mamoiii,te lo hice con mucho cariño mi amorsita hermosa 💞</p>
+
+    <!-- 🎵 Video de YouTube oculto -->
+    <iframe
+      id="musica"
+      width="0"
+      height="0"
+      src=""
+      frameborder="0"
+      allow="autoplay; encrypted-media"
+    ></iframe>
+  </div>
+
+  <script>
+    const mensaje = document.getElementById('mensaje');
+    const btn = document.getElementById('mensajeBtn');
+    const musica = document.getElementById('musica');
+
+    // 🔹 Muestra el mensaje y activa la música
+    btn.addEventListener('click', function() {
+      mensaje.style.display = 'block';
+      musica.src = "https://www.youtube.com/embed/xPaSuWrBAQI?autoplay=1&loop=1&playlist=xPaSuWrBAQI";
+      btn.style.display = 'none'; // oculta el botón después de tocar
+    });
+
+    // 🔹 Carrusel automático
+    let slideIndex = 0;
+    showSlides();
+    function showSlides() {
+      const slides = document.getElementsByClassName("slide");
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) { slideIndex = 1 }
+      slides[slideIndex - 1].style.display = "block";
+      setTimeout(showSlides, 3000);
+    }
+  </script>
+</body>
+</html>
+
+

@@ -1,0 +1,50 @@
+body {
+  background: linear-gradient(to right, #ff9a9e, #fad0c4);
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  text-align: center;
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  width: 300px;
+}
+
+h1 {
+  color: #ff4d6d;
+}
+
+p {
+  color: #444;
+}
+
+.foto {
+  width: 100%;
+  border-radius: 15px;
+  margin: 15px 0;
+}
+
+button {
+  background-color: #ff4d6d;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background-color: #e63956;
+}
+
+.oculto {
+  display: none;
+}
